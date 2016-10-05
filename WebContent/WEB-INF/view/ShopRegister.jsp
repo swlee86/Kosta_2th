@@ -86,7 +86,7 @@
 
 	 
 </div>
-<div id="right" style="float: left">
+<div id="right" style="float: left; margin-left: 80px;">
 	<div id="map" style="width:300px;height:300px;margin-top:10px;display:none; float: left"></div><br>
 </div>
  	 
