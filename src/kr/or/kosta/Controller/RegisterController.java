@@ -14,6 +14,7 @@ import kr.or.kosta.Action.ActionForward;
 import kr.or.kosta.Service.Admin.ShopRegister_Serv;
 import kr.or.kosta.Service.Custermer.LoginOkService;
 import kr.or.kosta.Service.Custermer.RegisterOkService;
+import kr.or.kosta.Service.Custermer.ShopSearch_Serv;
 
 @WebServlet("*.reg")
 public class RegisterController extends HttpServlet {
@@ -61,6 +62,16 @@ public class RegisterController extends HttpServlet {
 				
 			}
 		}
+		if(Url_Command.equals("/registerPop.reg")){
+			System.out.println("registerPop.reg Strat!");
+			action = new ShopSearch_Serv();
+			try{
+				forward = action.excute(request, response);
+			}catch(Exception e){
+				
+			}
+		}
+		
 		
 		if(Url_Command.equals("/loginok.reg")){
 			System.out.println("loginok Strat!");

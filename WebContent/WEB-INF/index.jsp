@@ -159,9 +159,10 @@ $(function(){
 				$('#register_dialog').dialog('open')
 			});
 			
-			$('#DDD').click(function(){
+/* 			$('#DDD').click(function(){
 				$('#register_dialog').dialog('open')
-			});
+			}); 
+*/
 			
 			
 			<c:if test="${not empty memberid}">
@@ -182,71 +183,7 @@ $(function(){
 			</c:if>
 
 			
-//로그인시 고객 정보 확인(제약)
-    var numcheck = /^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$/
-    //alert(inputNumber);
-	$('#register_gogo').click(function(){
-	if($('#inputid').val()==""){
-		alert("ID는 필수 값입니다");
-		$('#inputid').focus();
-		return false;
-		}else{
-			if($('#pswd').val()==""){
-				alert("비밀번호는 필수 입력 값입니다")
-				$('#pswd').focus();
-				return false;
-		}else{
-			if($('#inputPasswordCheck').val()==""){
-				alert("비밀번호를 확인차 한 번 더 입력해 주세요")
-				$('#inputPasswordCheck').focus();
-				return false;
-			}else{
-				if($('#pswd').val()!=$('#inputPasswordCheck').val()){
-					alert("입력하신 비밀번호가 서로 일치하지 않습니다. 확인해 주세요")
-					$('#pswd').focus();
-					return false;
-				}else{
-					if($('#inputName').val()==""){
-						alert("이름을 반드시 입력해 주세요");
-						$('#inputName').focus();
-						return false;
-					}else{
-						if($('#inputNumber').val()==""){
-							alert("휴대전화 번호는 필수 입력 값입니다");
-							$('#inputNumber').focus();
-							return false;
-						}else{
-						    if(!numcheck.test($('#inputNumber').val())) {
-						        alert("휴대폰 번호에는 숫자만 넣으셔야 합니다.");
-						        inputNumber="";
-						        $('#inputNumber').focus();
-						        return false;
-						 	}else{
-							    if($('#inputmarket').val()==""){
-							        alert("매장명을 입력해 주세요");
-							        inputmarket="";
-							        $('#inputmarket').focus();
-							        return false;
-							        }else{
-									    if($('#grade option:selected').val()=="99"	){									    	
-									        alert("등급을 선택해 주세요");
-									        $('#grade').focus();
-									        return false;
-							    	}if($("input[name='agree']:checkbox:checked").size() == 0){				
-										alert("이용약관에 동의하셔야 이용이 가능합니다.");
-										return false;
-										}else
-											$('#regijspgo').submit();
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		});
-		
+
 	
     $('#logingo').click(function(){	
     if($('#id').val()==""){
@@ -365,7 +302,7 @@ $(function(){
             	<a href="#" class="btn btn-default btn-block m-t-md" id="pwsearch">비밀번호 찾기</a>
            	<hr>
             <div class="form-group">
-                <a href="#" class="btn btn-default btn-block m-t-md" id="DDD">회원가입</a>
+                <a href="registerPop.reg" class="btn btn-default btn-block m-t-md" id="DDD" target="_blank">회원가입</a>
             </div>
         </form>
         </div>
@@ -430,10 +367,14 @@ $(function(){
     <div class="form-group">
     <label for="inputName" class="col-sm-2 control-label" id=market>매장명</label>
     <div class="col-sm-4">
-    <input type="text" class="form-control" id="inputmarket" name="market" placeholder="매장 이름">
+    <select name="shopCode">
+    	<option value="1">1</option>
+    	<option value="2">2</option>
+    </select>
     </div>
     </div>
     
+ <!--    <input type="text" class="form-control" id="inputmarket" name="market" placeholder="매장 이름"> -->
     
     <div class="form-group">
     <label for="inputNumber" class="col-sm-2 control-label" id=gradech>직위</label>

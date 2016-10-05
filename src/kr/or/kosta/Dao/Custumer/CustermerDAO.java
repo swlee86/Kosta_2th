@@ -4,12 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import kr.or.kosta.Dto.Custumer.CustermerDTO;
+import kr.or.kosta.Dto.Shop.ShopData_Dto;
 
 public class CustermerDAO {
 	static DataSource ds;
@@ -112,5 +115,38 @@ public class CustermerDAO {
 		System.out.println("최종 row : " + row);
 		return row;
 	}
+	
+	public List<ShopData_Dto> shoplist(){
+		System.out.println("메인리스트 DAO단 시작합니다");
+		List<ShopData_Dto> list=null;
+		ShopData_Dto sdto = new ShopData_Dto();
+		try{
+			conn = ds.getConnection();
+			String sql="SELECT shop_code, shop_name FROM shop";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			list=new ArrayList<ShopData_Dto>();
+			
+			while(rs.next()){
+				System.out.println("데이터 담기 시작");
+				sdto.setSHOP_CODE(rs.getString("shop_code"));
+				sdto.setSHOP_NAME(rs.getString("shop_name"));
+				list.add(sdto);
+			}
+
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}finally{
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+				if (conn != null) conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+		}
+		return list;
+	}
+	
 	
 }
