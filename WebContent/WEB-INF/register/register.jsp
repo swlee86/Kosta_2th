@@ -135,11 +135,13 @@ $(function(){
   
     <label for="inputName" class="col-sm-2 control-label" id=market>매장명</label>
     <div class="col-sm-4">
-    <c:forEach var="slist" items="${list}">
+
     <select name="shopCode">
-    	<option value="1">${slist.SHOP_CODE} // ${slist.SHOP_NAME}</option>    
-    </select>
+    <c:forEach var="slist" items="${list}">
+    	<option value="${slist.SHOP_CODE}">${slist.SHOP_CODE} // ${slist.SHOP_NAME}</option>    
     </c:forEach>
+    </select>
+    
     </div>
     
     </div>
