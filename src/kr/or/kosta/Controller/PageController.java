@@ -24,7 +24,6 @@ import kr.or.kosta.Service.Admin.MemberList_Serv;
 import kr.or.kosta.Service.Admin.trade_list_Service;
 import kr.or.kosta.Service.Custermer.IndexmoveService;
 import kr.or.kosta.Service.Custermer.LogoutOkService;
-import kr.or.kosta.Service.Custermer.ShopSearch_Serv;
 import kr.or.kosta.Service.NoticeBoard.NoContentService;
 import kr.or.kosta.Service.NoticeBoard.NoDeleteOkService;
 import kr.or.kosta.Service.NoticeBoard.NoEditOkService;
