@@ -54,10 +54,10 @@ $(function(){
 						        $('#inputNumber').focus();
 						        return false;
 						 	}else{
-							    if($('#inputmarket').val()==""){
-							        alert("매장명을 입력해 주세요");
-							        inputmarket="";
-							        $('#inputmarket').focus();
+							    if($('#shopCode option:selected').val()=="999"){
+							        alert("매장을 선택해 주세요");
+							        shopCode="";
+							        $('#shopCode').focus();
 							        return false;
 							        }else{
 									    if($('#grade option:selected').val()=="99"	){									    	
@@ -136,17 +136,17 @@ $(function(){
     <label for="inputName" class="col-sm-2 control-label" id=market>매장명</label>
     <div class="col-sm-4">
 
-    <select name="shopCode">
+    <select name="shopCode" id="shopCode">
+    	<option value="999">매장 코드 및 매장명을 선택하세요</option>
     <c:forEach var="slist" items="${list}">
     	<option value="${slist.SHOP_CODE}">${slist.SHOP_CODE} // ${slist.SHOP_NAME}</option>    
     </c:forEach>
     </select>
-    
+    <c:forEach var="slist" items="${list}">
+    </c:forEach>
     </div>
     
     </div>
-    
- <!--    <input type="text" class="form-control" id="inputmarket" name="market" placeholder="매장 이름"> -->
     
     <div class="form-group">
     <label for="inputNumber" class="col-sm-2 control-label" id=gradech>직위</label>

@@ -7,6 +7,13 @@ public class ShopData_Dto {
 	private String SHOP_REPRE;
 	private String SHOP_BRN;
 	private String SHOP_PHONE;
+	
+	
+	public ShopData_Dto(String sHOP_NAME, String sHOP_CODE) {
+		super();
+		SHOP_NAME = sHOP_NAME;
+		SHOP_CODE = sHOP_CODE;
+	}
 	public String getSHOP_ADDR() {
 		return SHOP_ADDR;
 	}

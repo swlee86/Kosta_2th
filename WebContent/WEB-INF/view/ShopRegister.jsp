@@ -72,15 +72,15 @@
 <div id="left" style="float: left;">
 <h3>매장 등록 </h3>
 	<form action="InfoAdd.reg" method="post" > 
-		<table>
-			<tr><td>코드번호</td><td><input type="text" size="40" name="SHOP_CODE " id="SHOP_CODE" ></td></tr>
-			<tr><td>매장명</td><td><input type="text" size="40" name="SHOP_NAME "  id="SHOP_NAME " ></td></tr>
-			<tr><td rowspan="2">주소</td><td><input type="text" size="40" name="SHOP_ADDR_1"  id="SHOP_ADDR_1" placeholder="기본 주소(클릭하세요)" onclick="sample5_execDaumPostcode()" readonly="readonly"></td></tr>
-			<tr><td><input type="text" size="40" name="SHOP_ADDR_2"  id="SHOP_ADDR_2" placeholder="상세 주소"></td></tr>
-			<tr><td>대표자명</td><td><input type="text" size="40" name="SHOP_REPRE"  id="SHOP_REPRE"  ></td></tr>
-			<tr><td>사업자번호</td><td><input type="text" size="40" name="SHOP_BRN"  id="SHOP_BRN" ></td></tr>
-			<tr><td>매장 전화번호</td><td><input type="text" size="40" name="SHOP_PHONE"  id="SHOP_PHONE" ></td></tr>
-			<tr><td colspan="2"><input type="submit" value="전송" id="btnsumbit" ></td></tr>
+		<table border="1px solid">
+			<tr><td>코드번호</td><td colspan="2"><input type="text" style="width: 100%;" name="SHOP_CODE " id="SHOP_CODE" ></td></tr>
+			<tr><td>매장명</td><td colspan="2"><input type="text" style="width: 100%;" name="SHOP_NAME "  id="SHOP_NAME " ></td></tr>
+			<tr><td rowspan="2">주소</td><td><input type="text" style="width: 100%;" name="SHOP_ADDR_1"  id="SHOP_ADDR_1" placeholder="기본 주소(클릭하세요)" readonly="readonly"></td><td><button type="button" onclick="sample5_execDaumPostcode()">검색</button></td></tr>
+			<tr><td colspan="2"><input type="text" style="width: 100%;" name="SHOP_ADDR_2"  id="SHOP_ADDR_2" placeholder="상세 주소"></td></tr>
+			<tr><td>대표자명</td><td colspan="2"><input type="text" style="width: 100%;" name="SHOP_REPRE"  id="SHOP_REPRE"  ></td></tr>
+			<tr><td>사업자번호</td><td colspan="2"><input type="text" style="width: 100%;" name="SHOP_BRN"  id="SHOP_BRN" ></td></tr>
+			<tr><td>매장 전화번호</td><td colspan="2"><input type="text" style="width: 100%;" name="SHOP_PHONE"  id="SHOP_PHONE" ></td></tr>
+			<tr><td colspan="3"><input type="submit" style="width: 100%;" value="전송" id="btnsumbit" ></td></tr>
 		</table>
 	</form>
 

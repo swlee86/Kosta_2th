@@ -118,22 +118,24 @@ public class CustermerDAO {
 	
 	public List<ShopData_Dto> shoplist(){
 		System.out.println("메인리스트 DAO단 시작합니다");
-		List<ShopData_Dto> list=null;
-		ShopData_Dto sdto = new ShopData_Dto();
+		List<ShopData_Dto> list=new ArrayList<ShopData_Dto>();
+		
 		try{
 			conn = ds.getConnection();
 			String sql="SELECT shop_code, shop_name FROM shop";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			list=new ArrayList<ShopData_Dto>();
+			
 			
 			while(rs.next()){
 				System.out.println("데이터 담기 시작");
-				sdto.setSHOP_CODE(rs.getString("shop_code"));
-				sdto.setSHOP_NAME(rs.getString("shop_name"));
+				String sHOP_CODE = rs.getString(1);
+				String sHOP_NAME = rs.getString(2);
+				ShopData_Dto sdto = new ShopData_Dto(sHOP_NAME, sHOP_CODE);
 				list.add(sdto);
+				
 			}
-
+			System.out.println("list Size : " + list.size());
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 		}finally{

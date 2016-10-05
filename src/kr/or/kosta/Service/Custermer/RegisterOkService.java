@@ -17,11 +17,11 @@ public class RegisterOkService implements Action {
 		String email = request.getParameter("id");
 		String pswd = request.getParameter("pswd");
 		String name = request.getParameter("name");
-		String market = request.getParameter("market");
+		String shopCode = request.getParameter("shopCode");
 		String phnum = request.getParameter("phnum");
 		int grade = Integer.parseInt(request.getParameter("grade"));
 		
-		CustermerDTO cdto = new CustermerDTO(email, pswd, name, phnum, market, grade);
+		CustermerDTO cdto = new CustermerDTO(email, pswd, name, phnum, shopCode, grade);
 		int result = 0;
 		String msg = "";
 		CustermerDAO cdao = new CustermerDAO();
